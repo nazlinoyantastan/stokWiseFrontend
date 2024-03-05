@@ -8,16 +8,14 @@ import { map } from 'rxjs';
 export class LoginService {
 
   isLogin = false;
-  username="";
-  password="";
-  token="";
-
+  username = "";
+  password = "";
+  token = "";
 
   constructor(
-    private httpClient : HttpClient
+    private httpClient: HttpClient
   ) { }
 
-  
 
   login(username: string, password: string){
     return this.httpClient.post<any>('/login',{username,password}).pipe(
@@ -33,4 +31,7 @@ export class LoginService {
       })
     )
   }
+
+
+
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../service/login.service';
-import { Router } from '@angular/router';
+import { LoginService } from '../../service/login.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +23,7 @@ export class LoginComponent {
       next: (resp) => {
         this.router.navigate(['/stokwise'])
       },
-      error: (err) => {
+      error: (err:any) => {
         console.log(err);
       }
     });

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './core/component/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // provideHttpClient(withInterceptors([urlInterceptor])),
+    // {
+    //   provide: APP_CONFIG,
+    //   useValue: environment
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
